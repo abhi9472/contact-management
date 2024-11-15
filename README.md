@@ -1,3 +1,4 @@
+
 # Contact Management System
 
 This is a simple **Contact Management System** built using Node.js, Express, and MongoDB. It allows users to manage and organize their contacts, including adding, updating, deleting, and viewing contact information. The application is designed to be easy to use and provides basic functionality to interact with the contact data.
@@ -34,3 +35,114 @@ Before running the project, make sure you have the following installed on your m
    ```bash
    git clone https://github.com/abhi9472/contact-management.git
    cd contact-management
+   ```
+
+2. **Install dependencies**:
+
+   In the project directory, run the following command to install the necessary packages:
+
+   ```bash
+   npm install
+   ```
+
+3. **Set up environment variables**:
+
+   - Create a `.env` file in the root directory of the project and add the following environment variables:
+
+     ```env
+     MONGO_URI=mongodb://localhost:27017/contact-management
+     PORT=5000
+     ```
+
+   Replace the `MONGO_URI` with your MongoDB connection string if you're using a remote database (e.g., MongoDB Atlas).
+
+4. **Start the server**:
+
+   After setting up the environment variables, run the following command to start the backend server:
+
+   ```bash
+   npm start
+   ```
+
+   The server should now be running on `http://localhost:5000`.
+
+## API Routes
+
+### 1. **Add a Contact**
+
+- **Endpoint**: `POST /api/contacts`
+- **Request Body**: 
+
+  ```json
+  {
+    "name": "John Doe",
+    "phone": "1234567890",
+    "email": "john.doe@example.com",
+    "address": "123 Main St, Anytown, USA"
+  }
+  ```
+
+- **Response**: 
+
+  ```json
+  {
+    "message": "Contact added successfully!"
+  }
+  ```
+
+### 2. **Get All Contacts**
+
+- **Endpoint**: `GET /api/contacts`
+- **Response**: 
+
+  ```json
+  [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "phone": "1234567890",
+      "email": "john.doe@example.com",
+      "address": "123 Main St, Anytown, USA"
+    },
+    {
+      "id": "2",
+      "name": "Jane Smith",
+      "phone": "0987654321",
+      "email": "jane.smith@example.com",
+      "address": "456 Elm St, Othertown, USA"
+    }
+  ]
+  ```
+
+### 3. **Update a Contact**
+
+- **Endpoint**: `PUT /api/contacts/:id`
+- **Request Body**: 
+
+  ```json
+  {
+    "name": "John Doe Updated",
+    "phone": "1112223333",
+    "email": "john.updated@example.com",
+    "address": "789 Pine St, Newtown, USA"
+  }
+  ```
+
+- **Response**:
+
+  ```json
+  {
+    "message": "Contact updated successfully!"
+  }
+  ```
+
+### 4. **Delete a Contact**
+
+- **Endpoint**: `DELETE /api/contacts/:id`
+- **Response**:
+
+  ```json
+  {
+    "message": "Contact deleted successfully!"
+  }
+  ```
