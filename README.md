@@ -1,4 +1,3 @@
-
 # Contact Management System
 
 This is a simple **Contact Management System** built using Node.js, Express, and MongoDB. It allows users to manage and organize their contacts, including adding, updating, deleting, and viewing contact information. The application is designed to be easy to use and provides basic functionality to interact with the contact data.
@@ -71,18 +70,22 @@ Before running the project, make sure you have the following installed on your m
 ### 1. **Add a Contact**
 
 - **Endpoint**: `POST /contacts/add`
-- **Request Body**: 
+- **Request Body**:
 
   ```json
   {
-    "name": "John Doe",
-    "phone": "1234567890",
-    "email": "john.doe@example.com",
-    "address": "123 Main St, Anytown, USA"
+    "firstName": "Abhishek",
+    "lastName": "Kumar",
+    "email": "abhi@gmail.com",
+    "phoneNumber": "9472561447",
+    "company": "Erino",
+    "jobTitle": "Software Engineer",
+    "_id": "67365c004fc1d6d883ea7b70",
+    "__v": 0
   }
   ```
 
-- **Response**: 
+- **Response**:
 
   ```json
   {
@@ -93,23 +96,29 @@ Before running the project, make sure you have the following installed on your m
 ### 2. **Get All Contacts**
 
 - **Endpoint**: `GET /contacts/getall`
-- **Response**: 
+- **Response**:
 
   ```json
   [
     {
-      "id": "1",
-      "name": "John Doe",
-      "phone": "1234567890",
-      "email": "john.doe@example.com",
-      "address": "123 Main St, Anytown, USA"
+      "_id": "67365c004fc1d6d883ea7b70",
+      "firstName": "Abhishek",
+      "lastName": "Kumar",
+      "email": "abhi@gmail.com",
+      "phoneNumber": "9876543211",
+      "company": "Erino",
+      "jobTitle": "Software Engineer",
+      "__v": 0
     },
     {
-      "id": "2",
-      "name": "Jane Smith",
-      "phone": "0987654321",
-      "email": "jane.smith@example.com",
-      "address": "456 Elm St, Othertown, USA"
+      "_id": "67373ef89e34a4695f1da786",
+      "firstName": "Rishit",
+      "lastName": "Gupta",
+      "email": "rishitgupta203@gmail.com",
+      "phoneNumber": "8288228456",
+      "company": "Epam",
+      "jobTitle": "Backend Developer",
+      "__v": 0
     }
   ]
   ```
@@ -117,15 +126,20 @@ Before running the project, make sure you have the following installed on your m
 ### 3. **Update a Contact**
 
 - **Endpoint**: `PUT /contacts/update`
-- **Request Body**: 
+- **Request Body**:
 
   ```json
-  {
-    "name": "John Doe Updated",
-    "phone": "1112223333",
-    "email": "john.updated@example.com",
-    "address": "789 Pine St, Newtown, USA"
-  }
+
+    "contact": {
+        "_id": "67365c004fc1d6d883ea7b70",
+        "firstName": "Abhishek",
+        "lastName": "Kumar",
+        "email": "abhi@gmail.com",
+        "phoneNumber": "9876543211",
+        "company": "Erino",
+        "jobTitle": "Software Engineer",
+        "__v": 0
+    }
   ```
 
 - **Response**:
