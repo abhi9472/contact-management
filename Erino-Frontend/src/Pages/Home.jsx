@@ -126,13 +126,13 @@ const HomePage = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>First Name</TableCell>
-              <TableCell>Last Name</TableCell>
-              <TableCell>Email</TableCell>
-              <TableCell>Phone Number</TableCell>
-              <TableCell>Company</TableCell>
-              <TableCell>Job Title</TableCell>
-              <TableCell>Actions</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>First Name</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Last Name</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Email</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Phone Number</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Company</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Job Title</TableCell>
+              <TableCell style={{ fontWeight: "bold" }}>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
