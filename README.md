@@ -50,7 +50,7 @@ Before running the project, make sure you have the following installed on your m
    - Create a `.env` file in the root directory of the `backend` and add the following environment variables:
 
      ```env
-     MONGO_URI=mongodb://localhost:27017/contact-management
+     MONGO_URI=<you_mongo_connection_string>/contact-management
      PORT=8000
      ```
 
