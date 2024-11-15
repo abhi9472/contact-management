@@ -12,7 +12,7 @@ import {
   IconButton,
 } from "@mui/material";
 import HomeIcon from "@mui/icons-material/Home";
-import ContactForm from "./ContactForm.jsx"; // Ensure this path points to your ContactForm component
+import ContactForm from "./ContactForm.jsx";
 
 const Navbar = ({ refreshContacts }) => {
   const [openDialog, setOpenDialog] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = ({ refreshContacts }) => {
           <Button
             color="inherit"
             startIcon={<HomeIcon />}
-            onClick={() => window.location.reload()} 
+            onClick={() => window.location.reload()}
           >
             Home
           </Button>
@@ -45,7 +45,6 @@ const Navbar = ({ refreshContacts }) => {
         </Toolbar>
       </AppBar>
 
-      {/* Dialog for adding a new contact */}
       <Dialog
         open={openDialog}
         onClose={handleCloseDialog}

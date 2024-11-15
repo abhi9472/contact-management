@@ -64,13 +64,13 @@ Before running the project, make sure you have the following installed on your m
    npm start
    ```
 
-   The server should now be running on `http://localhost:5000`.
+   The server should now be running on `http://localhost:8001`.
 
 ## API Routes
 
 ### 1. **Add a Contact**
 
-- **Endpoint**: `POST /api/contacts`
+- **Endpoint**: `POST /contacts/add`
 - **Request Body**: 
 
   ```json
@@ -92,7 +92,7 @@ Before running the project, make sure you have the following installed on your m
 
 ### 2. **Get All Contacts**
 
-- **Endpoint**: `GET /api/contacts`
+- **Endpoint**: `GET /contacts/getall`
 - **Response**: 
 
   ```json
@@ -116,7 +116,7 @@ Before running the project, make sure you have the following installed on your m
 
 ### 3. **Update a Contact**
 
-- **Endpoint**: `PUT /api/contacts/:id`
+- **Endpoint**: `PUT /contacts/update`
 - **Request Body**: 
 
   ```json
@@ -138,7 +138,7 @@ Before running the project, make sure you have the following installed on your m
 
 ### 4. **Delete a Contact**
 
-- **Endpoint**: `DELETE /api/contacts/:id`
+- **Endpoint**: `DELETE /contacts/delete`
 - **Response**:
 
   ```json

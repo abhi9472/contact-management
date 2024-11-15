@@ -1,8 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import contactRoutes from "./routes/contactRoutes.js";
-import dbConfig from "./config/dbConfig.js"; // Assuming you have a dbConfig function for MongoDB connection
-
+import dbConfig from "./config/dbConfig.js"; 
 dotenv.config();
 import cors from "cors";
 
@@ -15,11 +14,11 @@ app.use(
   })
 );
 
-app.use("/api/contacts", contactRoutes);
+app.use("/contacts", contactRoutes);
 
 const PORT = process.env.PORT;
 
-// Make sure your dbConfig function connects to MongoDB properly.
+
 dbConfig()
   .then(() => {
     app.listen(PORT, () => {

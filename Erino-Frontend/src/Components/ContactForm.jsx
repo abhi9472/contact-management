@@ -23,7 +23,7 @@ const ContactForm = ({ refreshContacts, closeDialog }) => {
     try {
 
       const response = await axios.post(
-        "http://localhost:8001/api/contacts/add",
+        "http://localhost:8001/contacts/add",
         formData
       );
 

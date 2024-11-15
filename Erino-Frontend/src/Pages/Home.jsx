@@ -27,14 +27,13 @@ const HomePage = () => {
     company: "",
   });
 
-  // Fetch all contacts when the page loads
   useEffect(() => {
     const fetchContacts = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8001/api/contacts/getall"
+          "http://localhost:8001/contacts/getall"
         );
-        setContacts(response.data); // Set the contacts in the state
+        setContacts(response.data);
       } catch (error) {
         console.error("Error fetching contacts:", error);
         alert("Failed to load contacts. Please try again.");
@@ -44,28 +43,25 @@ const HomePage = () => {
     fetchContacts();
   }, []);
 
-  // Open dialog with selected contact data for editing
   const handleEdit = (contact) => {
-    setSelectedContact(contact); // Set selected contact for editing
+    setSelectedContact(contact);
     setUpdatedData({
       phoneNumber: contact.phoneNumber,
       company: contact.company,
     });
-    setOpenDialog(true); // Open the dialog
+    setOpenDialog(true);
   };
 
-  // Update contact details
   const handleUpdate = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:8001/api/contacts/update?_id=${selectedContact._id}`,
+        `http://localhost:8001/contacts/update?_id=${selectedContact._id}`,
         {
           phoneNumber: updatedData.phoneNumber,
           company: updatedData.company,
         }
       );
 
-      // Update the contact list with the updated contact
       setContacts((prevContacts) =>
         prevContacts.map((contact) =>
           contact._id === selectedContact._id
@@ -78,7 +74,6 @@ const HomePage = () => {
         )
       );
 
-      // Close dialog and reset states
       setOpenDialog(false);
       setSelectedContact(null);
       setUpdatedData({ phoneNumber: "", company: "" });
@@ -90,14 +85,12 @@ const HomePage = () => {
     }
   };
 
-  // Delete contact
   const handleDelete = async (contactId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:8001/api/contacts/delete?_id=${contactId}`
+        `http://localhost:8001/contacts/delete?_id=${contactId}`
       );
 
-      // Remove the deleted contact from the list
       setContacts(contacts.filter((contact) => contact._id !== contactId));
 
       console.log("Delete successful:", response.data);
@@ -107,21 +100,15 @@ const HomePage = () => {
     }
   };
 
-  // Handle adding a new contact
   const handleAddContact = async () => {
     try {
-      const response = await axios.post(
-        "http://localhost:8001/api/contacts/add",
-        {
-          phoneNumber: updatedData.phoneNumber,
-          company: updatedData.company,
-        }
-      );
+      const response = await axios.post("http://localhost:8001/contacts/add", {
+        phoneNumber: updatedData.phoneNumber,
+        company: updatedData.company,
+      });
 
-      // Add the newly added contact to the state
       setContacts((prevContacts) => [...prevContacts, response.data]);
 
-      // Close the dialog and reset form fields
       setOpenDialog(false);
       setUpdatedData({ phoneNumber: "", company: "" });
 
